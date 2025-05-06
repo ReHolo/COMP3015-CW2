@@ -1,71 +1,66 @@
-# OpenGL Rendering Project
+# COMP3015 CW2 – Real-Time Graphics Project
 
-## Overview
-This project is an OpenGL-based rendering system that demonstrates various graphical effects, including basic shading, skybox rendering, and plane rendering. The system utilizes GLSL shaders to process and display 3D scenes with lighting, textures, and transformations.
+Author: Ji-Jian Chin  
+Module: COMP3015 – Advanced Graphics and Real-Time Rendering  
+Academic Year: 2024–2025
 
+## Project Overview
 
+This project demonstrates multiple advanced real-time rendering techniques using OpenGL and GLSL. The scene includes physically based materials, volumetric clouds, shadow mapping, and post-processing effects. The purpose is to showcase shader knowledge and graphics programming as part of the CW2 submission for COMP3015.
 
-## How It Works
-### **1. Initialization**
-- The application initializes GLFW and OpenGL settings.
-- Scene objects, shaders, and textures are loaded in `SceneBasic_Uniform::initScene()`.
-- The camera is set up, and input handlers for mouse and keyboard are configured.
+## Implemented Features
 
-### **2. Rendering Pipeline**
-- **Skybox Rendering**: 
-  - `loadSkybox()` loads cube map textures.
-  - `drawSkybox()` renders a large cube with skybox textures.
-- **Object Rendering**:
-  - The `render()` function sets up the scene, applying transformations.
-  - Uses Phong shading model with PBR material textures.
-- **Plane Rendering**:
-  - Loads a textured ground plane (`plane.vert`, `plane.frag`).
-  - Applies normal mapping and roughness for realistic shading.
+### Shader Techniques
 
-### **3. Camera System**
-- Camera movement is handled in `Camera::processInput()`.
-- Supports forward, backward, left, right, up, and down movement.
-- Mouse movement controls camera orientation (`Camera::processMouseMovement()`).
+- Shadow Mapping – Real-time shadow rendering using depth framebuffer and directional lighting.
+- Physically Based Rendering (PBR) – Implemented using Cook-Torrance BRDF with albedo, metallic, roughness, normal, and AO textures.
+- 3D Worley Noise – Procedural 3D noise generation used to control cloud shape and density.
+- Volumetric Cloud Rendering – Based on real-time rendering techniques from SIGGRAPH 2015, using raymarching and atmospheric light scattering.
+- Post-Processing Effects – Includes:
+  - Gaussian blur (applied to alpha-masked areas)
+  - HDR tone mapping
+  - Gamma correction
+  - Contrast adjustment
+  - Subtle blue tint for atmospheric effect
 
-### **4. Shader System**
-- Shaders are compiled and linked in `SceneBasic_Uniform::compile()`.
-- `GLSLProgram` handles GLSL shader programs dynamically.
-- Uniforms for lighting and materials are set at runtime.
+## Requirements
 
-## Features
-- **Basic Object Rendering**: Renders 3D objects using `basic_uniform` shaders.
-- **Skybox Implementation**: Uses `skybox.vert` and `skybox.frag` to render a cube-mapped sky.
-- **Plane Rendering**: Displays a textured plane with shading effects.
-- **Lighting and Texturing**: Implements lighting models and texture mapping.
-- **Camera Control**: Allows user interaction to move and rotate the camera.
+- Windows 10/11  
+- OpenGL 4.0 or higher  
+- Visual Studio 2022  
+- Dependencies:
+  - GLFW (window and input handling)
+  - GLAD (OpenGL function loader)
+  - stb_image (texture loading)
+  - GLM (OpenGL math library)
 
-## Setup & Compilation
-### **Requirements**
-- OpenGL 4.0+
-- GLFW for window management
-- GLAD for OpenGL function loading
-- stb_image for texture loading
+All dependencies are included in the project or preconfigured via local headers/libs.
 
-## Controls
-- `W/A/S/D` - Move the camera
-- `Mouse Movement` - Look around
-- `ESC` - Exit the application
+## Demonstration Video
 
-## Troubleshooting
-- Ensure that all dependencies (GLFW, GLAD, stb_image) are correctly installed.
-- Check OpenGL error messages for debugging rendering issues.
+Link: [https://www.youtube.com/link](https://www.youtube.com/link)
 
-## Future Enhancements
-- Implement dynamic lighting and shadows.
-- Add support for more complex models and animations.
-- Improve texture quality and PBR (Physically-Based Rendering) materials.
+The video demonstrates:
+- Volumetric cloud rendering
+- Shadow casting and dynamic lighting
+- Procedural noise affecting cloud structure
+- Post-processing enhancements and visual style
 
-## License
-This project is open-source and available under the MIT License.
+## References
 
+- Schneider A, Vos N. *The Real-Time Volumetric Cloudscapes of Horizon: Zero Dawn*. SIGGRAPH 2015.
+- Worley, S. *A Cellular Texture Basis Function*. 1996.
 
+## Feature Summary for CW2
 
-## Link
+- Shadow Mapping  
+- PBR  
+- 3D Noise  
+- Volumetric Cloud (Research-based)  
+- Post-Processing Effects  
+- Git Repository with source code  
+- Demonstration video
 
--Youtube:https://youtu.be/y-xbUXui3-I
+## Academic Statement
 
+This submission is my own original work. All shaders and techniques implemented were created or adapted by me and are properly cited when inspired by external sources.
