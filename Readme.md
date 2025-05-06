@@ -38,7 +38,7 @@ All dependencies are included in the project or preconfigured via local headers/
 
 ## Demonstration Video
 
-Link: [https://www.youtube.com/link](https://www.youtube.com/link)
+Link: https://youtu.be/F5OYbQtYps0
 
 The video demonstrates:
 - Volumetric cloud rendering
