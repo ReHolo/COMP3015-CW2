@@ -1,7 +1,7 @@
 # COMP3015 CW2 – Real-Time Graphics Project
 
-Author: Ji-Jian Chin  
-Module: COMP3015 – Advanced Graphics and Real-Time Rendering  
+Author: Sirun Wu  
+Module: COMP3015 – CW2  
 Academic Year: 2024–2025
 
 ## Project Overview
